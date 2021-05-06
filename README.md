@@ -1,6 +1,7 @@
 # Probably first open source pool miner for arweave
 
 ## Install
+Tested with ubuntu 18.04
 
     git clone https://github.com/virdpool/miner
     cd miner
