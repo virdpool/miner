@@ -6,7 +6,7 @@ echo "NOTE. If you think that install is too slow, you probably should not mine 
 yum update -y
 yum install -y \
   iotop screen tmux mc git nano curl wget gcc gcc-c++ make cmake autoconf automake psmisc net-tools \
-  pkg-config libtool python3 gmp-devel
+  pkg-config libtool python3 gmp-devel openssl
 
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
