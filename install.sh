@@ -12,6 +12,7 @@ apt-get install -y \
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 source ~/.bashrc
 nvm i 14
+nvm alias default 14
 npm i -g iced-coffee-script
 npm ci
 
