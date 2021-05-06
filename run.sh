@@ -15,6 +15,8 @@ fi
 INTERNAL_API_SECRET=`cat ./internal_api_secret`
 
 ulimit -n 1000000
+source ~/.bashrc
+source ~/.nvm/nvm.sh
 # PERF tuning
 
 # pick your value. More cpu cores - more ram needed to alloc (usually)

@@ -3,7 +3,7 @@ echo "edit me. Fill WALLET"
 echo "... or wait 5 sec for demo mining on a test wallet"
 echo "comment this liles after edit"
 echo "also consider make some performance tuning"
-# sleep 5
+sleep 5
 
 WALLET="jBcOn4YhEFRVwmwpTodDNTPQ-E74iTOxqMuGGiAJgIc"
 PORT="2984"
@@ -15,6 +15,8 @@ fi
 INTERNAL_API_SECRET=`cat ./internal_api_secret`
 
 ulimit -n 1000000
+source ~/.bashrc
+source ~/.nvm/nvm.sh
 # PERF tuning
 
 # pick your value. More cpu cores - more ram needed to alloc (usually)
@@ -25,7 +27,7 @@ ulimit -n 1000000
 # enable randomx_jit enable randomx_large_pages enable randomx_hardware_aes \
 
 # TUNE your threads
-# stage_one_hashing_threads 1 stage_two_hashing_threads 1 io_threads 4 randomx_bulk_hashing_iterations 20
+# stage_one_hashing_threads 1 stage_two_hashing_threads 1 io_threads 4 randomx_bulk_hashing_iterations 20 \
 
 # NOTE pick peers here https://explorer.ar-test.virdpool.com/#/peer_list
 PEERS="peer 65.21.152.47:2984"
