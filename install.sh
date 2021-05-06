@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 echo "NOTE. If you think that install is too slow, you probably should not mine arweave on this computer"
 
 # generic pack for almost all cryptocurrencies and comfortable work
