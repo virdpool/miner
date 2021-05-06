@@ -11,5 +11,5 @@
     # consider edit WALLET and perf tuning
     ./run_testnet.sh
 
-block explorer https://explorer.ar-test.virdpool.com/
+block explorer https://explorer.ar-test.virdpool.com/ \
 pool UI and payouts coming soon
