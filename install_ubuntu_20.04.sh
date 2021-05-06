@@ -33,4 +33,4 @@ cd arweave
 
 # ensure time is synced, will produce invalid solutions
 apt-get install -y ntpdate
-ntpdate 1.ru.pool.ntp.org
+ntpdate pool.ntp.org

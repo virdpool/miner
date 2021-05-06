@@ -5,9 +5,13 @@
     git clone https://github.com/virdpool/miner
     cd miner
     # for differtent systems use different scripts
-    ./install_ubuntu_18.04.sh
     ./install_ubuntu_20.04.sh
-    # also there is old alternative install
+    ./install_ubuntu_18.04.sh
+    ./install_ubuntu_16.04.sh
+    # also works with debian 9
+    ./install_debian_10.sh
+    
+    # also there is old alternative install ubuntu 18.04 OTP 21
     ./install_old.sh
 
 ## Run on virdpool_testnet
