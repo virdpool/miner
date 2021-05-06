@@ -14,3 +14,7 @@ Tested with ubuntu 18.04
 
 block explorer https://explorer.ar-test.virdpool.com/ \
 pool UI and payouts coming soon
+
+## Stop miner
+
+    ./stop.sh
