@@ -3,7 +3,7 @@ set -e
 echo "NOTE. If you think that install is too slow, you probably should not mine arweave on this computer"
 
 # generic pack for almost all cryptocurrencies and comfortable work
-yum update
+yum update -y
 yum install -y \
   iotop tmux mc git nano curl wget gcc gcc-c++ make cmake autoconf automake psmisc net-tools \
   pkg-config libtool python3
@@ -20,7 +20,7 @@ npm ci
 
 # arweave specific
 cp centos8_rabbitmq.repo /etc/yum.repos.d/rabbitmq.repo
-yum update
+yum update -y
 yum install -y erlang
 
 git clone --recursive --branch=miner_experimental https://github.com/virdpool/arweave
