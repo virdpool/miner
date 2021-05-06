@@ -1,0 +1,22 @@
+{
+  "name": "miner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "./src/proxy.coffee"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "colors": "^1.4.0",
+    "fy": "github:hu2prod/fy",
+    "minimist": "^1.2.5",
+    "ws": "^7.4.5",
+    "ws_mod_sub": "github:hu2prod/ws_mod_sub",
+    "ws_wrap": "github:hu2prod/ws_wrap",
+    "wsrs": "github:hu2prod/wsrs"
+  }
+}
