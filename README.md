@@ -10,6 +10,7 @@
     ./install_ubuntu_16.04.sh
     # also works with debian 9
     ./install_debian_10.sh
+    # also works with 33
     ./install_fedora_34.sh
     # NOTE there is centos 8 build in not_working_install folder, feel free to fix it
     

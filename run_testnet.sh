@@ -39,7 +39,7 @@ screen -dmS virdpool_arweave_miner ./arweave/_build/virdpool_testnet/rel/arweave
 
 echo "see arweave node with"
 echo "  screen -R virdpool_arweave_miner"
-echo "if you will see server solution stale pls tune your threads. Consider reduce stage_one_hashing_threads"
+echo "if you will see 'server solution stale' pls tune your threads. Consider reduce stage_one_hashing_threads"
 echo ""
 echo "wait for startup..."
 sleep 30
