@@ -30,7 +30,7 @@ source ~/.nvm/nvm.sh
 # stage_one_hashing_threads 1 stage_two_hashing_threads 1 io_threads 4 randomx_bulk_hashing_iterations 20 \
 
 # NOTE pick peers here https://explorer.ar-test.virdpool.com/#/peer_list
-PEERS="peer 65.21.152.47:2984"
+PEERS="peer 65.21.63.64:2984"
 screen -dmS virdpool_arweave_miner ./arweave/_build/virdpool_testnet/rel/arweave/bin/start port $PORT pool_mine \
   internal_api_secret $INTERNAL_API_SECRET \
   $PEERS \
