@@ -17,7 +17,7 @@
     
     # windows 10:
     # wsl install: https://docs.microsoft.com/en-us/windows/wsl/install-win10
-    # and this should work
+    # and this should work with 20.04
     ./install_wsl.sh
     
     # NOTE some OS doesn't correctly work with npm ci
