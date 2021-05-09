@@ -19,12 +19,22 @@ source ~/.bashrc
 source ~/.nvm/nvm.sh
 # PERF tuning
 
+# for large pages support you need enable them.
 # pick your value. More cpu cores - more ram needed to alloc (usually)
 # sysctl -w vm.nr_hugepages=1000
 # cat /proc/meminfo | grep HugePages
 
 # add this to increase your hashpower
-# enable randomx_jit enable randomx_large_pages enable randomx_hardware_aes \
+#   enable randomx_jit          # will not work on some machines or can be even slower
+#   enable randomx_large_pages  # requires large pages support, will crash if not available or not enough
+#   enable randomx_hardware_aes # requires specific instruction set in your CPU
+
+# full tuned setup should be like this
+# screen -dmS virdpool_arweave_miner ./arweave/_build/virdpool_testnet/rel/arweave/bin/start port $PORT pool_mine \
+#   internal_api_secret $INTERNAL_API_SECRET \
+#   $PEERS \
+#   enable search_in_rocksdb_when_mining \
+#   enable randomx_jit enable randomx_large_pages enable randomx_hardware_aes \
 
 # TUNE your threads. After tuning your startup will be look like this (for 16 core CPU)
 # Ratio based on wour weave size. On testnet there is no sacrifice miners, so you have 100% of weave. So ratio is 1:1
