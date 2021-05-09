@@ -22,6 +22,7 @@
     
     # NOTE some OS doesn't correctly work with npm ci
     # see ./install_wsl.sh for workaround with pre-built node_modules
+    # Also you can use npm ci --unsafe-perm
     
     # also there is old alternative install ubuntu 18.04 OTP 21
     ./install_old.sh
