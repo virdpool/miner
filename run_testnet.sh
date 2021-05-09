@@ -26,8 +26,13 @@ source ~/.nvm/nvm.sh
 # add this to increase your hashpower
 # enable randomx_jit enable randomx_large_pages enable randomx_hardware_aes \
 
-# TUNE your threads
-# stage_one_hashing_threads 1 stage_two_hashing_threads 1 io_threads 4 randomx_bulk_hashing_iterations 20 \
+# TUNE your threads. After tuning your startup will be look like this (for 16 core CPU)
+# Ratio based on wour weave size. On testnet there is no sacrifice miners, so you have 100% of weave. So ratio is 1:1
+# screen -dmS virdpool_arweave_miner ./arweave/_build/virdpool_testnet/rel/arweave/bin/start port $PORT pool_mine \
+#   internal_api_secret $INTERNAL_API_SECRET \
+#   $PEERS \
+#   enable search_in_rocksdb_when_mining \
+#   stage_one_hashing_threads 8 stage_two_hashing_threads 8 io_threads 4 randomx_bulk_hashing_iterations 20
 
 # NOTE pick peers here https://explorer.ar-test.virdpool.com/#/peer_list
 PEERS="peer 65.21.63.64:2984"
