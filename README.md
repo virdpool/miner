@@ -12,7 +12,13 @@
     ./install_debian_10.sh
     # also works with 33
     ./install_fedora_34.sh
-    # NOTE there is centos 8 build in not_working_install folder, feel free to fix it
+    # seems works
+    ./install_centos_8.sh
+    
+    # windows 10:
+    # wsl install: https://docs.microsoft.com/en-us/windows/wsl/install-win10
+    # and this should work
+    ./install_ubuntu_20.04.sh
     
     # also there is old alternative install ubuntu 18.04 OTP 21
     ./install_old.sh

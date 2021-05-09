@@ -48,7 +48,6 @@ sleep 30
   --api-secret $INTERNAL_API_SECRET \
   --api-network arweave.virdpool_testnet \
   --miner-url "http://127.0.0.1:$PORT" \
-  --ws-pool-url "ws://65.21.4.61:8801"
+  --ws-pool-url "wss://ar-test.virdpool.com/ws"
 
-# --ws-pool-url "ws://ar-test.virdpool.com:8801"
 # --ws-pool-url "wss://ar-test.virdpool.com"
