@@ -18,7 +18,10 @@
     # windows 10:
     # wsl install: https://docs.microsoft.com/en-us/windows/wsl/install-win10
     # and this should work
-    ./install_ubuntu_20.04.sh
+    ./install_wsl.sh
+    
+    # NOTE some OS doesn't correctly work with npm ci
+    # see ./install_wsl.sh for workaround with pre-built node_modules
     
     # also there is old alternative install ubuntu 18.04 OTP 21
     ./install_old.sh
