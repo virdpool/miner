@@ -38,3 +38,10 @@ pool UI and payouts coming soon
 ## Stop miner
 
     ./stop.sh
+
+
+## Update miner
+
+    ./stop.sh
+    git pull
+    ./update.sh
