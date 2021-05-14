@@ -74,8 +74,9 @@ ws.sub loc_opt, (data)=>
     transformResponse : []
     headers :
       "x-internal-api-secret" : api_secret
-      "x-network"             : api_network
   
+  if api_network
+    axios_opt.headers["x-network"] = api_network
   # TODO probe joined
   url = "#{miner_url}"
   await axios.get(url, axios_opt).cb defer(err, res);

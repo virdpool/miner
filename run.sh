@@ -48,7 +48,7 @@ source ~/.nvm/nvm.sh
 
 
 # NOTE pick peers here https://explorer.ar.virdpool.com/#/peer_list
-PEERS="peer 104.248.251.82:1984 peer 100.35.124.212:1990 peer 104.36.231.194:1984 peer 104.156.229.161:1984 peer 103.68.60.172:8080"
+PEERS="peer 104.248.251.82:1984 peer 104.36.231.194:1984 peer 104.156.229.161:1984 peer 103.68.60.172:8080"
 screen -dmS virdpool_arweave_miner ./arweave/_build/virdpool_testnet/rel/arweave/bin/start port $PORT pool_mine \
   internal_api_secret $INTERNAL_API_SECRET \
   $PEERS \
@@ -60,7 +60,7 @@ echo "  screen -R virdpool_arweave_miner"
 echo "if you will see 'server solution stale' pls tune your threads. Consider reduce stage_one_hashing_threads"
 echo ""
 echo "wait for startup..."
-sleep 30
+sleep 60
 
 ./proxy.coffee --wallet $WALLET \
   --api-secret $INTERNAL_API_SECRET \
