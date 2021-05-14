@@ -28,7 +28,6 @@ apt-get install -y erlang
 git clone --recursive --branch=miner_experimental https://github.com/virdpool/arweave
 cd arweave
 ./rebar3 as prod tar
-./rebar3 as virdpool_testnet tar
 
 # ensure time is synced, will produce invalid solutions
 apt-get install -y ntpdate
