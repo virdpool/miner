@@ -30,7 +30,7 @@ source ~/.nvm/nvm.sh
 #   enable randomx_hardware_aes # requires specific instruction set in your CPU
 
 # full tuned setup should be like this
-# screen -dmS virdpool_arweave_miner ./arweave/_build/virdpool_testnet/rel/arweave/bin/start port $PORT pool_mine \
+# screen -dmS virdpool_arweave_miner ./arweave/_build/prod/rel/arweave/bin/start port $PORT pool_mine \
 #   internal_api_secret $INTERNAL_API_SECRET \
 #   $PEERS \
 #   enable search_in_rocksdb_when_mining \
@@ -40,7 +40,7 @@ source ~/.nvm/nvm.sh
 # Ratio based on wour weave size
 # (8.4/5.4) : 1 = 1.55 : 1
 # 10 : 6        = 1.67 : 1 (closest value)
-# screen -dmS virdpool_arweave_miner ./arweave/_build/virdpool_testnet/rel/arweave/bin/start port $PORT pool_mine \
+# screen -dmS virdpool_arweave_miner ./arweave/_build/prod/rel/arweave/bin/start port $PORT pool_mine \
 #   internal_api_secret $INTERNAL_API_SECRET \
 #   $PEERS \
 #   enable search_in_rocksdb_when_mining \
@@ -49,7 +49,7 @@ source ~/.nvm/nvm.sh
 
 # NOTE pick peers here https://explorer.ar.virdpool.com/#/peer_list
 PEERS="peer 104.248.251.82:1984 peer 104.36.231.194:1984 peer 104.156.229.161:1984 peer 103.68.60.172:8080"
-screen -dmS virdpool_arweave_miner ./arweave/_build/virdpool_testnet/rel/arweave/bin/start port $PORT pool_mine \
+screen -dmS virdpool_arweave_miner ./arweave/_build/prod/rel/arweave/bin/start port $PORT pool_mine \
   internal_api_secret $INTERNAL_API_SECRET \
   $PEERS \
   enable search_in_rocksdb_when_mining \
