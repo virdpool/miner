@@ -29,6 +29,7 @@
 
 ## Run on virdpool_testnet
 
+    ./activate_testnet.sh
     # consider edit WALLET and perf tuning
     ./run_testnet.sh
 

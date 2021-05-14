@@ -17,6 +17,14 @@ INTERNAL_API_SECRET=`cat ./internal_api_secret`
 ulimit -n 1000000
 source ~/.bashrc
 source ~/.nvm/nvm.sh
+
+# DATA DIR example
+# screen -dmS virdpool_arweave_miner ./launcher_with_log.sh ./arweave/_build/prod/rel/arweave/bin/start port $PORT pool_mine \
+#   internal_api_secret $INTERNAL_API_SECRET \
+#   data_dir /mnt/nvme1 \
+#   $PEERS \
+#   enable search_in_rocksdb_when_mining \
+
 # PERF tuning
 
 # for large pages support you need enable them.
