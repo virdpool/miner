@@ -46,7 +46,7 @@ source ~/.nvm/nvm.sh
 
 # NOTE pick peers here https://explorer.ar-test.virdpool.com/#/peer_list
 PEERS="peer 65.21.63.64:2984"
-screen -dmS virdpool_arweave_miner ./arweave/_build/virdpool_testnet/rel/arweave/bin/start port $PORT pool_mine \
+screen -dmS virdpool_arweave_miner ./launcher_with_log.sh ./arweave/_build/virdpool_testnet/rel/arweave/bin/start port $PORT pool_mine \
   internal_api_secret $INTERNAL_API_SECRET \
   $PEERS \
   enable search_in_rocksdb_when_mining \
