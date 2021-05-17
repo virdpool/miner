@@ -27,14 +27,30 @@
     # also there is old alternative install ubuntu 18.04 OTP 21
     ./install_old.sh
 
+## Run
+
+    # needed only if you are previously used ./activate_testnet.sh
+    ./activate_mainnet.sh
+    
+    cp ./run.sh ./my_run.sh
+    # consider edit WALLET and perf tuning
+    ./my_run.sh
+
+block explorers 
+ * https://viewblock.io/arweave
+ * https://explorer.ar.virdpool.com/
+
+pool https://ar.virdpool.com/
+
 ## Run on virdpool_testnet
 
     ./activate_testnet.sh
+    cp ./run_testnet.sh ./my_run_testnet.sh
     # consider edit WALLET and perf tuning
-    ./run_testnet.sh
+    ./my_run_testnet.sh
 
 block explorer https://explorer.ar-test.virdpool.com/ \
-pool UI and payouts coming soon
+pool https://ar-test.virdpool.com/
 
 ## Stop miner
 
@@ -52,4 +68,5 @@ pool UI and payouts coming soon
     sudo ./install_ubuntu_20.04.sh
     # and all other install scripts
     sudo ./activate_testnet.sh
+    sudo ./activate_mainnet.sh
     sudo ./update.sh
