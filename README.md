@@ -43,6 +43,12 @@ block explorers
 
 pool https://ar.virdpool.com/
 
+### sync fast (no mine)
+
+    # you should stop previous arweave instance
+    # ./stop.sh
+    ./sync.sh
+
 ## Run on virdpool_testnet
 
     ./activate_testnet.sh
