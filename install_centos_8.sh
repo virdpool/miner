@@ -22,7 +22,7 @@ npm ci
 # arweave specific
 curl -LO https://packages.erlang-solutions.com/erlang-solutions-2.0-1.noarch.rpm
 yum install -y erlang-solutions-2.0-1.noarch.rpm
-yum install -y esl-erlang
+yum install -y esl-erlang-21.3.8.17-1
 
 git clone --recursive --branch=miner_experimental https://github.com/virdpool/arweave
 cd arweave
