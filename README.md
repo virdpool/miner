@@ -1,6 +1,7 @@
 # Probably first open source pool miner for arweave
 
 ## Install
+All operations should be under root (`sudo su`).
 
     git clone https://github.com/virdpool/miner
     cd miner
@@ -63,10 +64,42 @@ pool https://ar-test.virdpool.com/
     ./update.sh
 
 ## If you are not root
+tl;dr `sudo su` and fuck linux security system because anybody do that \
+Ok... you want run it under user... welcome to linux hell...
 
-    # Following commands abowe require sudo unless you are already root
+### install
+
+    # Following commands above require sudo unless you are already root
     sudo ./install_ubuntu_20.04.sh
     # and all other install scripts
+
+### activate mainnet or testnet
+
     sudo ./activate_testnet.sh
+    # OR
     sudo ./activate_mainnet.sh
+
+### (optional) updates
+
     sudo ./update.sh
+
+### nvm and ownership fix
+
+    # inside miner directory
+    sudo chown -R user .
+    # now you want install nvm under user, because nvm under root will not work for you (NICE)
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+    source ~/.bashrc
+    source ~/.nvm/nvm.sh
+    nvm i 14
+    nvm alias default 14
+    npm i -g iced-coffee-script
+    rm -rf node_modules
+    npm ci
+    
+### miner start
+
+    # and now you are probably ready for launch
+    ./my_run.sh
+    # or
+    ./my_run_testnet.sh
