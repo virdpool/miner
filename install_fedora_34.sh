@@ -21,7 +21,7 @@ npm ci
 # arweave specific
 cp fedora_rabbitmq.repo /etc/yum.repos.d/rabbitmq.repo
 yum update -y
-yum install -y erlang
+yum install -y erlang-21.3.8.21-1.el8
 
 git clone --recursive --branch=miner_experimental https://github.com/virdpool/arweave
 cd arweave
