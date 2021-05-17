@@ -40,9 +40,16 @@ pool UI and payouts coming soon
 
     ./stop.sh
 
-
 ## Update miner
 
     ./stop.sh
     git pull
     ./update.sh
+
+## If you are not root
+
+    # Following commands abowe require sudo unless you are already root
+    sudo ./install_ubuntu_20.04.sh
+    # and all other install scripts
+    sudo ./activate_testnet.sh
+    sudo ./update.sh
