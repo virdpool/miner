@@ -82,7 +82,7 @@ ws.sub loc_opt, (data)=>
   await axios.get(url, axios_opt).cb defer(err, res);
   if err
     last_hash = null
-    return log_err "local miner not connected" 
+    return log_err "local miner not connected. See arweave.log"
   json = JSON.parse res.data
   return if typeof json.height != "number"
   return if json.height < 0
