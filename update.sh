@@ -10,5 +10,6 @@ git pull
 rm -rf _build
 
 ./rebar3 as virdpool_testnet tar
+./rebar3 as prod tar
 cd ..
 
