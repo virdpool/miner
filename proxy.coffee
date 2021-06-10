@@ -38,6 +38,13 @@ ws = new Ws_wrap ws_pool_url
 wsrs = new Ws_rs ws
 ws_mod_sub ws, wsrs
 
+do ()=>
+  loop
+    await wsrs.request {switch : "ping"}, defer(err)
+    perr err.message if err
+    await setTimeout defer(), 1000
+  return
+
 log = (args...)->
   puts new Date().toISOString(), args...
 
