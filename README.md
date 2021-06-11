@@ -11,9 +11,7 @@ All operations should be under root (`sudo su`).
     ./install_ubuntu_16.04.sh
     # also works with debian 9
     ./install_debian_10.sh
-    # also works with 33
     ./install_fedora_34.sh
-    # seems works
     ./install_centos_8.sh
     
     # windows 10:
@@ -25,7 +23,7 @@ All operations should be under root (`sudo su`).
     # see ./install_wsl.sh for workaround with pre-built node_modules
     # Also you can use npm ci --unsafe-perm
     
-    # also there is old alternative install ubuntu 18.04 OTP 21
+    # also there is old alternative install ubuntu 18.04 OTP 23
     ./install_old.sh
 
 ## Run

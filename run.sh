@@ -56,7 +56,7 @@ source ~/.nvm/nvm.sh
 
 
 # NOTE pick peers here https://explorer.ar.virdpool.com/#/peer_list
-PEERS="peer 104.248.251.82:1984 peer 104.36.231.194:1984 peer 104.156.229.161:1984 peer 103.68.60.172:8080"
+PEERS="peer 188.166.200.45 peer 188.166.192.169 peer 163.47.11.64 peer 139.59.51.59 peer 138.197.232.192"
 screen -dmS virdpool_arweave_miner ./launcher_with_log.sh ./arweave/_build/prod/rel/arweave/bin/start port $PORT pool_mine \
   internal_api_secret $INTERNAL_API_SECRET \
   $PEERS \

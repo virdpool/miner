@@ -1,5 +1,7 @@
 #!/usr/bin/env iced
+{spawn}   = require "child_process"
 require "fy"
+strip_ansi= require "strip-ansi"
 Ws_wrap   = require "ws_wrap"
 Ws_rs     = require "wsrs"
 ws_mod_sub= require "ws_mod_sub"
@@ -16,9 +18,23 @@ if !argv.wallet or !api_secret
 argv.worker ?= "default_worker"
 
 puts "Your mining wallet: #{colors.green argv.wallet}"
-puts "For hashrate look at arweave console (this is temporary solution)"
-puts "   screen -R virdpool_arweave_miner"
+# puts "For hashrate look at arweave console (this is temporary solution)"
+# puts "   screen -R virdpool_arweave_miner"
 puts ""
+puts "NOTE. First launch is much longer (10+ min)"
+puts ""
+
+# ###################################################################################################
+#    better logs
+# ###################################################################################################
+proc = spawn "tail", ["-f", "arweave.log"]
+proc.stdout.on "data", (data)->
+  for line in data.toString().split "\n"
+    line = strip_ansi line
+    line = line.trim()
+    continue if !line
+    puts "arweave.log: #{line}"
+  return
 
 # ###################################################################################################
 #    config
