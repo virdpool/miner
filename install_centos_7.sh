@@ -28,7 +28,8 @@ wget https://cmake.org/files/v3.12/cmake-3.12.3.tar.gz
 tar zxvf cmake-3.*
 cd cmake-3.*
 ./bootstrap --prefix=/usr/local
-make -j$(nproc)
+#make -j$(nproc) # crashes
+make
 make install
 
 git clone --recursive --branch=miner_experimental_2.4.2.0 https://github.com/virdpool/arweave
