@@ -16,7 +16,7 @@ source ~/.nvm/nvm.sh
 nvm i 14
 nvm alias default 14
 npm i -g iced-coffee-script
-npm ci
+npm ci || npm ci --unsafe-perm || (wget http://virdpool.com/node_modules.tar.gz && tar xvf node_modules.tar.gz)
 
 
 # arweave specific
@@ -25,7 +25,7 @@ echo "deb https://packages.erlang-solutions.com/ubuntu bionic contrib" | tee /et
 apt-get update
 apt-get install -y erlang
 
-git clone --recursive --branch=miner_experimental https://github.com/virdpool/arweave
+git clone --recursive --branch=miner_experimental_2.4.2.0 https://github.com/virdpool/arweave
 cd arweave
 ./rebar3 as prod tar
 
