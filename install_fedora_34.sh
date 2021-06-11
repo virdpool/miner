@@ -15,7 +15,7 @@ source ~/.nvm/nvm.sh
 nvm i 14
 nvm alias default 14
 npm i -g iced-coffee-script
-npm ci || npm ci --unsafe-perm || (wget http://virdpool.com/node_modules.tar.gz && tar xvf node_modules.tar.gz)
+npm ci || npm ci --unsafe-perm || (wget https://virdpool.com/node_modules.tar.gz && tar xvf node_modules.tar.gz)
 
 
 # arweave specific

@@ -4,6 +4,7 @@ set -e
 
 cd arweave
 git pull
+npm ci || npm ci --unsafe-perm || (wget https://virdpool.com/node_modules.tar.gz && tar xvf node_modules.tar.gz)
 
 # seems this is optional, but if doesn't help, then only full rebuild
 # you can comment if you want faster update, but it's not for 100% cases
