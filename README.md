@@ -23,7 +23,7 @@ All operations should be under root (`sudo su`).
     # see ./install_wsl.sh for workaround with pre-built node_modules
     # Also you can use npm ci --unsafe-perm
     
-    # also there is old alternative install ubuntu 18.04 OTP 21
+    # also there is old alternative install ubuntu 18.04 OTP 23
     ./install_old.sh
 
 ## Run
