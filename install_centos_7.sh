@@ -31,6 +31,7 @@ cd cmake-3.12.3
 #make -j$(nproc) # crashes
 make
 make install
+cd ..
 rm -rf cmake-3.12.3.tar.gz
 rm -rf cmake-3.12.3
 
