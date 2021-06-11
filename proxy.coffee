@@ -1,12 +1,13 @@
 #!/usr/bin/env iced
+{spawn}   = require "child_process"
 require "fy"
+strip_ansi= require "strip-ansi"
 Ws_wrap   = require "ws_wrap"
 Ws_rs     = require "wsrs"
 ws_mod_sub= require "ws_mod_sub"
 axios     = require "axios"
 colors    = require "colors"
 argv      = require("minimist")(process.argv.slice(2))
-{spawn}   = require "child_process"
 
 api_secret = argv["api-secret"]
 
@@ -29,6 +30,7 @@ puts ""
 proc = spawn "tail", ["-f", "arweave.log"]
 proc.stdout.on "data", (data)->
   for line in data.toString().split "\n"
+    line = strip_ansi line
     line = line.trim()
     continue if !line
     puts "arweave.log: #{line}"
