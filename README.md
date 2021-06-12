@@ -18,10 +18,7 @@ All operations should be under root (`sudo su`).
     # wsl install: https://docs.microsoft.com/en-us/windows/wsl/install-win10
     # and this should work with 20.04
     ./install_wsl.sh
-    
-    # NOTE some OS doesn't correctly work with npm ci
-    # see ./install_wsl.sh for workaround with pre-built node_modules
-    # Also you can use npm ci --unsafe-perm
+    # Also note about large pages https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/enable-the-lock-pages-in-memory-option-windows?redirectedfrom=MSDN&view=sql-server-ver15
     
     # also there is old alternative install ubuntu 18.04 OTP 23
     ./install_old.sh
