@@ -8,6 +8,11 @@ sleep 5
 WALLET="jBcOn4YhEFRVwmwpTodDNTPQ-E74iTOxqMuGGiAJgIc"
 PORT="1984"
 
+if [ `lsof -i -P -n | grep LISTEN | grep 1984 | wc -l` != "0" ]; then
+  echo "FUCK 1984 port is occupied. Probably by other arweave node. I'm going to use 1985"
+  PORT="1985"
+fi
+
 if [ ! -f "./internal_api_secret" ]; then
   openssl rand -base64 20 | sed 's/[=+\/]//g' > ./internal_api_secret
 fi
