@@ -3,7 +3,7 @@ set -e
 echo "stopping previous miner..."
 ./stop.sh
 
-echo "edit me. Fill WALLET"
+echo "edit me. Fill WALLET (you can get your address in your wallet app https://docs.arweave.org/info/wallets/arweave-web-extension-wallet )"
 echo "... or wait 5 sec for demo mining on a test wallet"
 echo "comment this liles after edit"
 echo "also consider make some performance tuning"
