@@ -1,4 +1,8 @@
 #!/bin/bash
+set -e
+echo "stopping previous miner..."
+./stop.sh
+
 echo "edit me. Fill WALLET"
 echo "... or wait 5 sec for demo mining on a test wallet"
 echo "comment this liles after edit"
