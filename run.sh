@@ -1,5 +1,9 @@
 #!/bin/bash
-echo "edit me. Fill WALLET"
+set -e
+echo "stopping previous miner..."
+./stop.sh
+
+echo "edit me. Fill WALLET (you can get your address in your wallet app https://docs.arweave.org/info/wallets/arweave-web-extension-wallet )"
 echo "... or wait 5 sec for demo mining on a test wallet"
 echo "comment this liles after edit"
 echo "also consider make some performance tuning"
@@ -74,6 +78,9 @@ echo "if you will see 'server solution stale' pls tune your threads. Consider re
 echo ""
 echo "wait for startup..."
 sleep 60
+
+# if you want to change worker name use
+# --worker your_worker_name \
 
 ./proxy.coffee --wallet $WALLET \
   --api-secret $INTERNAL_API_SECRET \

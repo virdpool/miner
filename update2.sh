@@ -9,7 +9,8 @@ git pull
 
 # seems this is optional, but if doesn't help, then only full rebuild
 # you can comment if you want faster update, but it's not for 100% cases
-rm -rf _build
+# somebody did store data_dir inside _build folder. That's really stupid. This command can kill all data in that case. And only for that case I disable this
+# rm -rf _build
 
 ./rebar3 as virdpool_testnet tar
 ./rebar3 as prod tar

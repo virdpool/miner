@@ -1,7 +1,5 @@
 #!/usr/bin/env iced
-{spawn}   = require "child_process"
 require "fy"
-strip_ansi= require "strip-ansi"
 Ws_wrap   = require "ws_wrap"
 Ws_rs     = require "wsrs"
 ws_mod_sub= require "ws_mod_sub"
@@ -18,23 +16,9 @@ if !argv.wallet or !api_secret
 argv.worker ?= "default_worker"
 
 puts "Your mining wallet: #{colors.green argv.wallet}"
-# puts "For hashrate look at arweave console (this is temporary solution)"
-# puts "   screen -R virdpool_arweave_miner"
+puts "For hashrate look at arweave console (this is temporary solution)"
+puts "   screen -R virdpool_arweave_miner"
 puts ""
-puts "NOTE. First launch is much longer (10+ min)"
-puts ""
-
-# ###################################################################################################
-#    better logs
-# ###################################################################################################
-proc = spawn "tail", ["-f", "arweave.log"]
-proc.stdout.on "data", (data)->
-  for line in data.toString().split "\n"
-    line = strip_ansi line
-    line = line.trim()
-    continue if !line
-    puts "arweave.log: #{line}"
-  return
 
 # ###################################################################################################
 #    config
@@ -153,3 +137,44 @@ ws.sub loc_opt, (data)=>
       "stale:#{stale}"
     ].join " "
 
+# ###################################################################################################
+#    sync watcher
+# ###################################################################################################
+max_available_dataset = 6274081889424
+my_available_dataset  = 0
+do ()=>
+  loop
+    await axios.get("https://arweave.net/metrics").cb defer(err, res);
+    if !err
+      res = res.data.toString()
+      list = res.split("\n").filter (t)->
+        return false if t[0] == "#"
+        /v2_index_data_size/.test t
+      if list.length
+        value = +list.last().split(" ")[1]
+        if isFinite value
+          max_available_dataset = Math.max max_available_dataset, value
+    
+    await setTimeout defer(), 10*60*1000 # 10 min
+  return
+
+do ()=>
+  loop
+    await axios.get("#{miner_url}/metrics").cb defer(err, res);
+    if !err
+      res = res.data.toString()
+      list = res.split("\n").filter (t)->
+        return false if t[0] == "#"
+        /v2_index_data_size/.test t
+      if list.length
+        value = +list.last().split(" ")[1]
+        if isFinite value
+          my_available_dataset = Math.max my_available_dataset, value
+          puts [
+            "dataset (weave) sync"
+            "#{my_available_dataset}/#{max_available_dataset}"
+            "(#{(my_available_dataset/max_available_dataset*100).toFixed(2).rjust 6}%)"
+          ].join " "
+    
+    await setTimeout defer(), 60*1000 # 1 min
+  return
