@@ -32,7 +32,6 @@ source ~/.nvm/nvm.sh
 #   internal_api_secret $INTERNAL_API_SECRET \
 #   data_dir /mnt/nvme1 \
 #   $PEERS \
-#   enable search_in_rocksdb_when_mining \
 
 # PERF tuning
 
@@ -50,7 +49,6 @@ source ~/.nvm/nvm.sh
 # screen -dmS virdpool_arweave_miner ./arweave/_build/prod/rel/arweave/bin/start port $PORT pool_mine \
 #   internal_api_secret $INTERNAL_API_SECRET \
 #   $PEERS \
-#   enable search_in_rocksdb_when_mining \
 #   enable randomx_jit enable randomx_large_pages enable randomx_hardware_aes \
 
 # TUNE your threads. After tuning your startup will be look like this (for 16 core CPU).
@@ -60,16 +58,25 @@ source ~/.nvm/nvm.sh
 # screen -dmS virdpool_arweave_miner ./arweave/_build/prod/rel/arweave/bin/start port $PORT pool_mine \
 #   internal_api_secret $INTERNAL_API_SECRET \
 #   $PEERS \
-#   enable search_in_rocksdb_when_mining \
 #   stage_one_hashing_threads 10 stage_two_hashing_threads 6 io_threads 4 randomx_bulk_hashing_iterations 20
 
+# some suggestions for powerful CPUs
+# if you have ryzen use `randomx_bulk_hashing_iterations 40`
+# if you have threadripper/epyc use `randomx_bulk_hashing_iterations 60`
+
+# if you have separate NVMe for rocksdb folder - add `enable search_in_rocksdb_when_mining`
+# in any other cases remove it
+
+# screen -dmS virdpool_arweave_miner ./arweave/_build/prod/rel/arweave/bin/start port $PORT pool_mine \
+#   internal_api_secret $INTERNAL_API_SECRET \
+#   $PEERS \
+#   enable search_in_rocksdb_when_mining \
 
 # NOTE pick peers here https://explorer.ar.virdpool.com/#/peer_list
 PEERS="peer 188.166.200.45 peer 188.166.192.169 peer 163.47.11.64 peer 139.59.51.59 peer 138.197.232.192"
 screen -dmS virdpool_arweave_miner ./launcher_with_log.sh ./arweave/_build/prod/rel/arweave/bin/start port $PORT pool_mine \
   internal_api_secret $INTERNAL_API_SECRET \
   $PEERS \
-  enable search_in_rocksdb_when_mining \
   
 
 echo "see arweave node with"
