@@ -25,7 +25,7 @@ echo "deb https://packages.erlang-solutions.com/ubuntu bionic contrib" | tee /et
 apt-get update
 apt-get install -y erlang
 
-git clone --recursive --branch=miner_experimental_2.4.2.0 https://github.com/virdpool/arweave
+git clone --recursive --branch=miner_experimental_2.4.4.0 https://github.com/virdpool/arweave
 cd arweave
 ./rebar3 as prod tar
 

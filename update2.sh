@@ -4,7 +4,7 @@ npm ci || npm ci --unsafe-perm || (wget https://virdpool.com/node_modules.tar.gz
 
 cd arweave
 git fetch --all
-git checkout miner_experimental_2.4.2.0
+git checkout miner_experimental_2.4.4.0
 git pull
 
 # seems this is optional, but if doesn't help, then only full rebuild
