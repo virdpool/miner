@@ -51,21 +51,44 @@ source ~/.nvm/nvm.sh
 #   $PEERS \
 #   enable randomx_jit enable randomx_large_pages enable randomx_hardware_aes \
 
-# TUNE your threads. After tuning your startup will be look like this (for 16 core CPU).
-# Ratio based on wour weave size
-# (8.4/5.4) : 1 = 1.55 : 1
-# 10 : 6        = 1.67 : 1 (closest value)
+# TUNE your threads. After tuning your startup will be look like this (for 16 core CPU)
 # screen -dmS virdpool_arweave_miner ./arweave/_build/prod/rel/arweave/bin/start port $PORT pool_mine \
 #   internal_api_secret $INTERNAL_API_SECRET \
 #   $PEERS \
-#   stage_one_hashing_threads 10 stage_two_hashing_threads 6 io_threads 4 randomx_bulk_hashing_iterations 20
+#   stage_one_hashing_threads 9 stage_two_hashing_threads 6 io_threads 4 randomx_bulk_hashing_iterations 20
+
+# How to guess possible best values?
+# Ratio based on your weave size. E.g. You have 100% of public weave.
+# (11985/7555) : 1  = 1.586: 1 (total weave size / public weave size)
+# IMPORTANT. But if you have less space than all public weave size you should recalculate values
+# you can get fresh numbers here https://explorer.ar.virdpool.com/#/calculator/hashrate_mode=cpu&cpu_model=AMD%20THREADRIPPER%203990X&cpu_count=1&storage_count=1&storage_type=nvme_pcie3&storage_size=8796093022208
+
+# Sample how to pick best value for 16 core CPU
+# 10 : 6            = 1.67 : 1 (closest value, but can cause problems)
+#  9 : 7            = 1.28 : 1 (alternative way too far from optimal)
+#  9 : 6            = 1.5  : 1 (much more closer I guess less problematic, but 1 thread is underused if you have very fast NVMe (low load on IO threads) this can be suboptimal)
+
+# In most cases it's better to have ratio LESS than `total weave size / public weave size`
+# If you have too much stage_one_hashing_threads you will cause queue block, because stage 2 will have not enough workers to consume all read chunks.
+# NOTE 100% usage of all threads should have bad impact on arweave node stability and overall system stability, use with care
+# sum of your stage_one_hashing_threads + stage_two_hashing_threads should be less or equal your threads (for ryzen threads = 2*cores). threads-1, threads-2 is also ok, threads+1 can be also ok. Only benchmark will show the best
+# keeping same ratio 1.67 for higher core CPU
+# for 24 threaded CPU -> 15 : 9  (alternative 14 / 10 = 1.4 ; 14 / 9  = 1.55)
+# for 32 threaded CPU -> 20 : 12 (alternative 19 / 13 = 1.46; 19 / 12 = 1.58)
+# for 48 threaded CPU -> 30 : 18 (alternative 29 / 19 = 1.52; 29 / 18 = 1.61 (too much))
+# for 64 threaded CPU -> 40 : 24 (alternative 39 / 25 = 1.56 which is closer)
+# You can test alternative values. Keep what it best for your system
+
+# io_threads - more threads - more load on your NVMe (higher is not always better)
+# make sure that you have proper cooling on NVMe. Normal temperature 40-50° C. 60-70° - your NVMe will be throttling
 
 # some suggestions for powerful CPUs
 # if you have ryzen use `randomx_bulk_hashing_iterations 40`
 # if you have threadripper/epyc use `randomx_bulk_hashing_iterations 60`
+# NOTE It's not recommended to use both 100% of threads and high `randomx_bulk_hashing_iterations` value, arweave node requires some free CPU to sync and handle HTTP requests
 
 # if you have separate NVMe for rocksdb folder - add `enable search_in_rocksdb_when_mining`
-# in any other cases remove it
+# in any other cases remove it. If you have < 1 TB free space pls note that blocks + txs will consume ~400 GB. Also <=2.4.4 chunk_storage stores only 256KB chunks, all other chunks are stored in rocksdb
 
 # screen -dmS virdpool_arweave_miner ./arweave/_build/prod/rel/arweave/bin/start port $PORT pool_mine \
 #   internal_api_secret $INTERNAL_API_SECRET \
