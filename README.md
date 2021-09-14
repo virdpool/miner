@@ -30,6 +30,8 @@ All operations should be under root (`sudo su`).
     
     cp ./run.sh ./my_run.sh
     # consider edit my_run.sh. Edit WALLET and apply perf tuning
+    # see WALLET="jBcOn4YhEFRVwmwpTodDNTPQ-E74iTOxqMuGGiAJgIc"
+    # get arweave wallet with instructions https://docs.arweave.org/info/wallets/arweave-web-extension-wallet
     ./my_run.sh
 
 block explorers 
