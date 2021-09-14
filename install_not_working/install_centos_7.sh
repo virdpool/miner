@@ -35,7 +35,7 @@ cd ..
 rm -rf cmake-3.12.3.tar.gz
 rm -rf cmake-3.12.3
 
-git clone --recursive --branch=miner_experimental_2.4.4.0 https://github.com/virdpool/arweave
+git clone --recursive --branch=miner_experimental_2.4.2.0 https://github.com/virdpool/arweave
 cd arweave
 ./rebar3 as prod tar
 
