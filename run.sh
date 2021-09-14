@@ -12,9 +12,14 @@ sleep 5
 WALLET="jBcOn4YhEFRVwmwpTodDNTPQ-E74iTOxqMuGGiAJgIc"
 PORT="1984"
 
-if [ `lsof -i -P -n | grep LISTEN | grep 1984 | wc -l` != "0" ]; then
-  echo "FUCK 1984 port is occupied. Probably by other arweave node. I'm going to use 1985"
-  PORT="1985"
+# Yes it will break if PORT > 65535 or PORT is non-numeric string. This code is intended to be SIMPLE failover
+if [ `lsof -i -P -n | grep LISTEN | grep $PORT | wc -l` != "0" ]; then
+  while [ `lsof -i -P -n | grep LISTEN | grep $PORT | wc -l` != "0" ]; do
+    NEXT_PORT=$((PORT + 1))
+    echo "FUCK $PORT port is occupied. Probably by other arweave node. I'm going to probe $NEXT_PORT"
+    PORT=$((PORT + 1))
+  done
+  echo "I will use port $PORT"
 fi
 
 if [ ! -f "./internal_api_secret" ]; then
