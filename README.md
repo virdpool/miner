@@ -32,6 +32,10 @@ All operations should be under root (`sudo su`).
     # consider edit my_run.sh. Edit WALLET and apply perf tuning
     # see WALLET="jBcOn4YhEFRVwmwpTodDNTPQ-E74iTOxqMuGGiAJgIc"
     # get arweave wallet with instructions https://docs.arweave.org/info/wallets/arweave-web-extension-wallet
+    
+    # https://docs.arweave.org/info/mining/mining-guide
+    tune2fs -O large_dir /dev/<your disk with arweave data_dir>
+    
     ./my_run.sh
 
 block explorers 
