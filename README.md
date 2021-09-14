@@ -29,7 +29,7 @@ All operations should be under root (`sudo su`).
     ./activate_mainnet.sh
     
     cp ./run.sh ./my_run.sh
-    # consider edit WALLET and perf tuning
+    # consider edit my_run.sh. Edit WALLET and apply perf tuning
     ./my_run.sh
 
 block explorers 
