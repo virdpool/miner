@@ -100,6 +100,10 @@ source ~/.nvm/nvm.sh
 #   $PEERS \
 #   enable search_in_rocksdb_when_mining \
 
+# There is some boost recipe from xmrig applicable to arweave mining
+# https://xmrig.com/docs/miner/randomx-optimization-guide/msr
+# https://github.com/xmrig/xmrig/blob/dev/scripts/randomx_boost.sh
+
 # NOTE pick peers here https://explorer.ar.virdpool.com/#/peer_list
 PEERS="peer 188.166.200.45 peer 188.166.192.169 peer 163.47.11.64 peer 139.59.51.59 peer 138.197.232.192"
 screen -dmS virdpool_arweave_miner ./launcher_with_log.sh ./arweave/_build/prod/rel/arweave/bin/start port $PORT pool_mine \
