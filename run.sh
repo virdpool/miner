@@ -104,7 +104,18 @@ source ~/.nvm/nvm.sh
 # https://xmrig.com/docs/miner/randomx-optimization-guide/msr
 # https://github.com/xmrig/xmrig/blob/dev/scripts/randomx_boost.sh
 
+# misc
+# disk_space (num in GB)
+#   Max size (in GB) for the disk partition containing the Arweave data directory (blocks, txs, etc) whenthe miner stops writing files to disk
+
+# screen -dmS virdpool_arweave_miner ./arweave/_build/prod/rel/arweave/bin/start port $PORT pool_mine \
+#   internal_api_secret $INTERNAL_API_SECRET \
+#   $PEERS \
+#   disk_space 100 \
+
 # NOTE pick peers here https://explorer.ar.virdpool.com/#/peer_list
+# Use at own risk. It's highly NOT recommended to change peers. This is list of TRUSTED peers. Add only peers if they are your own. Data from trusted peers accepted unchecked
+
 PEERS="peer 188.166.200.45 peer 188.166.192.169 peer 163.47.11.64 peer 139.59.51.59 peer 138.197.232.192"
 screen -dmS virdpool_arweave_miner ./launcher_with_log.sh ./arweave/_build/prod/rel/arweave/bin/start port $PORT pool_mine \
   internal_api_secret $INTERNAL_API_SECRET \
