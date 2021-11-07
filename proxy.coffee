@@ -11,7 +11,7 @@ for k,v of argv
 
 api_secret = argv["api-secret"]
 
-if !argv.wallet or !api_secret or !argv.stat_only
+if !argv.wallet or !api_secret or argv.stat_only
   perr "usage ./proxy.coffee --wallet <your wallet> --api-secret <arweave node api secret>"
   process.exit 1
 
