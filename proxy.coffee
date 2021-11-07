@@ -17,10 +17,11 @@ if (!argv.wallet or !api_secret) and !argv.stat_only
 
 argv.worker ?= "default_worker"
 
-puts "Your mining wallet: #{colors.green argv.wallet}"
-puts "For hashrate look at arweave console (this is temporary solution)"
-puts "   screen -R virdpool_arweave_miner"
-puts ""
+if !argv.stat_only
+  puts "Your mining wallet: #{colors.green argv.wallet}"
+  puts "For hashrate look at arweave console (this is temporary solution)"
+  puts "   screen -R virdpool_arweave_miner"
+  puts ""
 
 # ###################################################################################################
 #    config
