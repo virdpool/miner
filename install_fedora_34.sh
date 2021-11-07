@@ -26,7 +26,7 @@ yum update -y
 # yum install -y erlang-22.3.4.16-1.el8
 yum install -y erlang-23.3.1-1.fc34
 
-git clone --recursive --branch=miner_experimental_2.4.2.0 https://github.com/virdpool/arweave
+git clone --recursive --branch=miner_experimental_2.5.0.0 https://github.com/virdpool/arweave
 cd arweave
 ./rebar3 as prod tar
 
