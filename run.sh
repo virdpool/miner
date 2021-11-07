@@ -132,7 +132,8 @@ sleep 60
 # if you want to change worker name use
 # --worker your_worker_name \
 
-./proxy.coffee --wallet $WALLET \
+./proxy.coffee \
+  --wallet $WALLET \
   --api-secret $INTERNAL_API_SECRET \
   --miner-url "http://127.0.0.1:$PORT"
 
