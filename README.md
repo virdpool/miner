@@ -7,6 +7,7 @@ All operations should be under root (`sudo su`).
     cd miner
     # for differtent systems use different scripts
     ./install_ubuntu_20.04.sh
+    # install_ubuntu_20.04.sh can also work for 21.04 and 21.10, pls report me if not
     ./install_ubuntu_18.04.sh
     ./install_ubuntu_16.04.sh
     # also works with debian 9
