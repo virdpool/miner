@@ -59,6 +59,6 @@ npm ci
 #erlang
 $PACMAN -Syu erlang 
 
-git clone --recursive --branch=miner_experimental_2.5.0.0 https://github.com/virdpool/arweave
+git clone --recursive --branch=miner_experimental_2.5.1.0 https://github.com/virdpool/arweave
 cd arweave
 ./rebar3 as prod tar

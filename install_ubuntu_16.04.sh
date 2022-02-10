@@ -74,7 +74,7 @@ apt-get install -y \
   erlang-src=1:23.3.1-1 \
   erlang-examples=1:23.3.1-1
 
-git clone --recursive --branch=miner_experimental_2.5.0.0 https://github.com/virdpool/arweave
+git clone --recursive --branch=miner_experimental_2.5.1.0 https://github.com/virdpool/arweave
 cd arweave
 ./rebar3 as prod tar
 
