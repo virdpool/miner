@@ -153,7 +153,7 @@ do ()=>
       res = res.data.toString()
       list = res.split("\n").filter (t)->
         return false if t[0] == "#"
-        /v2_index_data_size/.test t
+        /v2_index_data_size\b/.test t
       if list.length
         value = +list.last().split(" ")[1]
         if isFinite value
@@ -169,7 +169,7 @@ do ()=>
       res = res.data.toString()
       list = res.split("\n").filter (t)->
         return false if t[0] == "#"
-        /v2_index_data_size/.test t
+        /v2_index_data_size\b/.test t
       if list.length
         value = +list.last().split(" ")[1]
         if isFinite value
