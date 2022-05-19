@@ -24,7 +24,7 @@ curl -LO https://packages.erlang-solutions.com/erlang-solutions-2.0-1.noarch.rpm
 yum install -y erlang-solutions-2.0-1.noarch.rpm
 yum install -y esl-erlang-23.3.1-1
 
-git clone --recursive --branch=miner_experimental_2.5.1.0 https://github.com/virdpool/arweave
+git clone --recursive --branch=miner_experimental_2.5.2.0 https://github.com/virdpool/arweave
 cd arweave
 ./rebar3 as prod tar
 
