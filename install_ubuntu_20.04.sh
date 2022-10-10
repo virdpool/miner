@@ -24,7 +24,7 @@ wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb
 dpkg -i erlang-solutions_2.0_all.deb
 apt-get update
 
-apt-get install -y \
+apt-get install -y --allow-downgrades \
   erlang-appmon=1:23.3.1-1 \
   erlang-asn1=1:23.3.1-1 \
   erlang-base=1:23.3.1-1 \
