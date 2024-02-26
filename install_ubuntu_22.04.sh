@@ -21,10 +21,10 @@ npm ci || npm ci --unsafe-perm || (wget https://virdpool.com/node_modules.tar.gz
 
 
 # arweave specific
-wget -O- https://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc | apt-key add -
-echo "deb https://packages.erlang-solutions.com/ubuntu focal contrib" | tee /etc/apt/sources.list.d/erlang.list
-echo "deb http://security.ubuntu.com/ubuntu impish-security main" | sudo tee /etc/apt/sources.list.d/impish-security.list
-apt-get update
+# wget -O- https://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc | apt-key add -
+# echo "deb https://packages.erlang-solutions.com/ubuntu focal contrib" | tee /etc/apt/sources.list.d/erlang.list
+# echo "deb http://security.ubuntu.com/ubuntu impish-security main" | sudo tee /etc/apt/sources.list.d/impish-security.list
+# apt-get update
 
 apt-get install -y erlang
 
